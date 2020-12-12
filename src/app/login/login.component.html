@@ -1,0 +1,92 @@
+<div fxLayout='row wrap' fxLayoutAlign='center stretch' class="margin-top-60 margin-bottom-60">
+    <p class="font-size-40 text-center text-color-red vertical-line">{{hideSection?'Login':'SignUp'}}</p>
+        <p class="justify-content padding-20 color-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio, temporibus eaque laboriosam, quia perspiciatis quas nam deserunt ex voluptates accusantium. 
+        Tempora accusamus velit necessitatibus impedit, maiores sunt voluptas quam.</p>
+    <form>
+    <div fxLayout='row wrap' fxLayoutAlign='center center' class="login-container"> 
+    <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='50'>
+        <img [src]="hideSection?'../../assets/Web/undraw_Login_re_4vu2.svg':'../../assets/Web/undraw_join_of2w.svg'"/>
+    </div>
+    <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='50' *ngIf='!hideSection'> 
+        <div fxLayout='row wrap' fxLayoutAlign='start stretch' class="margin-top-60 margin-bottom-60">
+            <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100'>
+                <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='80'>
+                    <mat-form-field appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput name='firstname'>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100'>
+                <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='80'>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput name='firstname' >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100'>
+                <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='80'>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput name='firstname' >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100'>
+                <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='80'>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Role</mat-label>
+                        <input matInput name='firstname' >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100'>
+                <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='80'>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput name='firstname' >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100'>
+                <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='80'>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput name='firstname' >
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='50' *ngIf='hideSection'>
+            <div fxLayout='row wrap' fxLayoutAlign='start stretch' class="margin-top-60 margin-bottom-60">
+                <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100'>
+                    <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='80'>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput name='firstname' >
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100'>
+                    <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='80'>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput name='firstname' >
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div fxLayout='row wrap' fxLayoutAlign='space-around stretch' fxFlex='100' class="margin-top-30 margin-bottom-60">
+        <div fxLayout='column wrap' fxLayoutAlign='center stretch' fxFlex='30'>
+            <button mat-button (click)='hideSection ? navigate():hideSection = true'>{{hideSection ? 'Create an account':'Back to Login'}}</button>
+        </div>
+        <div fxLayout='column wrap' fxLayoutAlign='center stretch' fxFlex='30'>
+            <button mat-raised-button color="warn" (click)='hideSection ? login():signup()'>{{hideSection ? 'LogIn':'SignUp'}}</button>
+        </div>
+    </div>
+    </div>
+</form>
+</div>

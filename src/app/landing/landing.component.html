@@ -1,0 +1,30 @@
+<div  fxLayout='row wrap' fxLayoutAlign='start stretch' *ngIf='staticData.hideStaticPages' class="background-picture">
+    <header>
+    <div  fxLayout='column wrap' fxLayoutAlign='start stretch' class="width-100 margin-bottom-60">
+        <div fxLayout='row' fxLayoutAlign='center center' class="navbar" fxFlex='100'>
+            <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='20'>
+            </div>
+            <div fxLayout='column wrap' fxLayoutAlign='end end' fxFlex='80'>
+                <div fxLayout='row' fxLayoutAlign="start center"  fxLayoutGap='' class='menulist'>
+                    <div  fxLayout='column wrap' fxLayoutAlign='start center' *ngFor='let i of menus;let ind=index' [ngClass]="(router.url==i.link || router.url==='')?'link-active':''" (click)="navigate(i)"> 
+                    <div *ngIf="isLogIn(ind,i)" style='margin-left:30px'>{{(ind==5 && staticData.isLoggedIn)?'Logout':i.menu}}</div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+    <div fxLayout='column wrap' fxLayoutAlign='start stretch'>
+        <router-outlet></router-outlet>
+    </div>
+    <footer class="width-100">
+      <div fxLayout='row wrap' fxLayoutAlign='start stretch'>
+          <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='48'>
+            <p>Designed by Abdul Zabeer H</p>
+          </div>
+          <div fxLayout='column wrap' fxLayoutAlign='start end' fxFlex='48'>
+            <p>Copyright by myworktracker</p>
+          </div>
+      </div>
+    </footer>
+  </div>
