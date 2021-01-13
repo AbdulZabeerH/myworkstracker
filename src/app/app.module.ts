@@ -17,11 +17,19 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {FormsModule}   from '@angular/forms';
+import {FormsModule,ReactiveFormsModule}   from '@angular/forms';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { CalenderComponent } from './calender/calender.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { ListComponent } from './list/list.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { PopupComponent } from './popup/popup.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSelectModule} from '@angular/material/select';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +41,10 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     DashboardComponent,
     ProfileComponent,
     LandingComponent,
-    CalenderComponent
+    CalenderComponent,
+    ListComponent,
+    PopupComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -47,12 +58,19 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     MatInputModule,
     FormsModule,
     MatSidenavModule,
+    DragDropModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatButtonToggleModule,
+    MatSelectModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
     })
   ],
   providers: [],
+  entryComponents: [PopupComponent,ListComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

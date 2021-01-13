@@ -1,0 +1,29 @@
+<div fxLayout='row wrap' fxLayoutAlign='center stretch'>
+<h1>Add Todo's</h1>
+</div>
+<form [formGroup]='dataForm'>
+<div fxLayout='row wrap' fxLayoutAlign='start stretch' >
+        <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100'>
+            <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='60'>
+                <mat-label>Title</mat-label>
+                <mat-form-field appearance="outline">
+                    <input matInput name='Title' formControlName='title'>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100'>
+            <div fxLayout='column wrap' fxLayoutAlign='start stretch' fxFlex='60'>
+            <mat-label>Description</mat-label>
+            <textarea rows='5' formControlName='description'></textarea>
+            </div>
+        </div>
+        <div fxLayout='row wrap' fxLayoutAlign='center stretch' fxFlex='100' class="margin-top-20">
+        <div fxLayout='column wrap' fxLayoutAlign='start stretch' class="margin-left-10px" fxFlex='20'>
+            <button mat-raised-button color="warn" (click)='save()'>Add To List</button>
+        </div>
+        <div fxLayout='column wrap' fxLayoutAlign='start stretch' class="margin-left-10px" fxFlex='20'>
+            <button mat-button (click)='cancel()'>Cancel</button>
+        </div>
+    </div>
+</div>
+</form>

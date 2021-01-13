@@ -6,6 +6,7 @@ import { ContactusComponent } from "./contactus/contactus.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HomeComponent } from "./home/home.component";
 import { LandingComponent } from "./landing/landing.component";
+import { ListComponent } from "./list/list.component";
 import { LoginComponent } from "./login/login.component";
 import { ProfileComponent } from "./profile/profile.component";
 
@@ -30,7 +31,7 @@ const routes: Routes = [
     path: "dashboard",
     component: DashboardComponent,
     children: [
-      { path: "", component: CalenderComponent }
+      { path: "", component: CalenderComponent },
     ],
   },
 ];

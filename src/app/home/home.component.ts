@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  
+  loader = true;
 
   ngOnInit() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    setTimeout(()=>{
+      this.loader=false;
+    },3000)
   }
 
 }

@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import '../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 html,body{
     margin: 0;
     padding: 0;
@@ -99,6 +101,21 @@ footer{
     padding:20px;
     border-radius: 10px;
 }
+.aboutme-card{
+    background-color: white;
+    height: 200px;
+    padding:20px;
+    border-radius: 10px;
+    text-align: justify;
+}
+.feedback-card{
+    background-color: white;
+    height: auto;
+    padding:10px;
+    border-radius: 10px;
+    text-align: justify;
+    overflow-wrap: anywhere;
+}
 .margin-top-30{
     margin-top: 30px;
 }
@@ -135,3 +152,48 @@ footer{
     height: 60px;
     width:100px;   
  }
+ .margin-top-20{
+     margin-top:20px;
+ }
+ .margin-left-50{
+     margin-left: 50px;
+ }
+ .custom-mat-card{
+     .mat-card{
+         width: 200px;
+         overflow-wrap: anywhere;
+     }
+ }
+ .margin-bottom-100{
+     margin-bottom: 100px;
+ }
+ .margin-left-10px{
+    margin-left: 10px;
+ }
+ .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  .text-right{
+      text-align: right;
+  }
+  .custom-icon{
+      .material-icons{
+        background: red;
+        color: white;
+        border-radius: 36px;
+        font-size: 60px;
+      }
+      
+  }

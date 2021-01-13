@@ -1,3 +1,42 @@
-<div fxLayout='row wrap' fxLayoutAlign='start stretch'>
-    
+<div fxLayout='row wrap' fxLayoutAlign='center stretch' class='margin-top-44 margin-bottom-100'>
+    <div fxLayout='row wrap' fxLayoutAlign='center center' >
+        <p class="font-size-40 text-center text-color-red vertical-line">Manage Work With Calendar</p>
+        <p class="justify-content padding-20 color-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam dolore architecto iusto voluptate sapiente animi quasi dicta 
+            cupiditate debitis corrupti impedit maiores atque, omnis ad veritatis non ipsam, voluptatum tempora?</p>
+    </div>
+    <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+        <div fxLayout="column " fxFlex="100" fxLayoutGap="30px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+            <div>
+              <mat-button-toggle-group name="buttonTogg">
+                <mat-button-toggle value="day" aria-label="Text align left" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+                  &lt;
+                </mat-button-toggle>
+                <mat-button-toggle value="month" aria-label="Text align center" mwlCalendarToday [(viewDate)]="viewDate">
+                  {{viewDate | date: &quot;MMM yyyy&quot;}}
+                </mat-button-toggle>
+                <mat-button-toggle value="month" aria-label="Text align center" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+                  &gt;
+                </mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div style="width:100%;">
+              <div [ngSwitch]="view">
+                <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent(&apos;Clicked&apos;, $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+                </mwl-calendar-month-view>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false" fxLayoutGap='20px'>
+            <div fxLayout='column wrap' fxLayoutAlign='center stretch' fxFlex='30'>
+              <button mat-raised-button color="warn" (click)='exportAsXLSX()' >Download Report</button>
+          </div>
+          <div fxLayout='column wrap' fxLayoutAlign='center stretch' fxFlex='30'>
+              <button mat-raised-button color="warn">Email Report</button>
+          </div>
+          </div>
+        </div>
+      </div>
 </div>

@@ -18,11 +18,11 @@ export class StaticDataService {
       link: "/home/profile",
     },
     {
-      menu: "About Us",
+      menu: "About Me",
       link: "/home/aboutus",
     },
     {
-      menu: "Contact US",
+      menu: "Contact Me",
       link: "/home/contactus",
     },
     {
